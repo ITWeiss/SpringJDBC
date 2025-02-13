@@ -21,7 +21,9 @@
     id serial primary key,
     name VARCHAR(255) not null,
     price decimal(10,2) not null
-);]]></console>
+);
+
+select * from company.products;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
