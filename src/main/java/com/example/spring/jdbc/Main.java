@@ -11,8 +11,6 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        DataSource dataSource;
-
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         ProductDao productDao = context.getBean(ProductDao.class);
 
