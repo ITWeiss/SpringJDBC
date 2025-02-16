@@ -16,11 +16,11 @@ public class ProductDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    String INSERT_PRODUCT = "INSERT INTO company.products (name, price) VALUES (?, ?)";
-    String SELECT_BY_ID = "SELECT * FROM company.products WHERE id = ?";
-    String SELECT_ALL_PRODUCTS = "SELECT * FROM company.products";
-    String UPDATE_PRODUCT = "UPDATE company.products SET name = ?, price = ? WHERE id = ?";
-    String INSERT_LOG = "INSERT INTO company.logs (message) VALUES ('Product added')";
+    private static final String INSERT_PRODUCT = "INSERT INTO company.products (name, price) VALUES (?, ?)";
+    private static final String SELECT_BY_ID = "SELECT * FROM company.products WHERE id = ?";
+    private static final String SELECT_ALL_PRODUCTS = "SELECT * FROM company.products";
+    private static final String UPDATE_PRODUCT = "UPDATE company.products SET name = ?, price = ? WHERE id = ?";
+    private static final String INSERT_LOG = "INSERT INTO company.logs (message) VALUES ('Product added')";
 
 
     private RowMapper<Product> productRowMapper() {
