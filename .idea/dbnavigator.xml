@@ -6,7 +6,7 @@
   </component>
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -16,12 +16,20 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="9c857c22-cfa2-46da-99c8-11f8c1c05d68">
-      <console name="Connection" type="STANDARD" schema="company" session="Main"><![CDATA[create table company.products (
+    <connection id="9bc49876-91d6-48f9-8fe0-3fe2d5232d77">
+      <console name="myDatabase" type="STANDARD" schema="company" session="Main"><![CDATA[create table company.products (
     id serial primary key,
-    name VARCHAR(255) not null,
+    name VARCHAR(255) NOT NULL,
     price decimal(10,2) not null
-);]]></console>
+);
+
+create table company.logs (
+    id serial primary key,
+    message text not null
+);
+
+select * from company.products;
+select * from company.logs;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -29,14 +37,22 @@
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="9c857c22-cfa2-46da-99c8-11f8c1c05d68" object-ref="consoles/Connection" />
+      <object connection-id="9bc49876-91d6-48f9-8fe0-3fe2d5232d77" object-ref="consoles/myDatabase" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="9c857c22-cfa2-46da-99c8-11f8c1c05d68" />
+    <connection id="9bc49876-91d6-48f9-8fe0-3fe2d5232d77" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.MethodExecutionManager">
+    <method-browser />
+    <execution-history>
+      <group-entries value="true" />
+      <execution-inputs />
+    </execution-history>
+    <argument-values-cache />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
@@ -44,9 +60,9 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="9c857c22-cfa2-46da-99c8-11f8c1c05d68" active="true" signed="true">
+      <connection id="9bc49876-91d6-48f9-8fe0-3fe2d5232d77" active="true" signed="true">
         <database>
-          <name value="Company_Database" />
+          <name value="myDatabase" />
           <description value="" />
           <database-type value="POSTGRES" />
           <config-type value="BASIC" />
@@ -54,12 +70,8 @@
           <driver-source value="BUNDLED" />
           <driver-library value="" />
           <driver value="" />
-          <url-type value="DATABASE" />
-          <host value="localhost" />
-          <port value="5432" />
-          <database value="postgres" />
-          <tns-folder value="" />
-          <tns-profile value="" />
+          <url-type value="CUSTOM" />
+          <url value="jdbc:postgresql://localhost:5432/myDatabase" />
           <type value="USER_PASSWORD" />
           <user value="postgres" />
           <deprecated-pwd value="cG9zdGdyZXM=" />
